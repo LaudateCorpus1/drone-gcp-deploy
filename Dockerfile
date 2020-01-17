@@ -4,7 +4,7 @@ FROM alpine:3.8
 ARG GCLOUD_VERSION=269.0.0
 
 # Install required packages
-RUN apk --no-cache add curl ca-certificates python jq bash python2-yaml gettext
+RUN apk --no-cache add curl ca-certificates python jq bash py-yaml gettext
 
 # Install gcloud
 RUN curl -LO https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${GCLOUD_VERSION}-linux-x86_64.tar.gz
