@@ -1,5 +1,5 @@
-# drone-gcloud
-[![Build Status](https://cloud.drone.io/api/badges/viant/drone-gcloud/status.svg)](https://cloud.drone.io/viant/drone-gcloud)
+# drone-gcp-deploy
+[![Build Status](https://cloud.drone.io/api/badges/viant/drone-gcp-deploy/status.svg)](https://cloud.drone.io/viant/drone-gcp-deploy)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/viant/drone-gcloud/blob/master/LICENSE)
 
 Drone plugin to do blue/green deployments in Google Cloud using a HTTP(S) load balancer with two backend buckets. 
