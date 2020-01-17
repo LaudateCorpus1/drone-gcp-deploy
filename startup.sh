@@ -69,11 +69,15 @@ then
   echo "Blue: $DRONE_BUILD_NUMBER" > $SOURCE_DIR/drone_build_version.html
   echo "Setting bucket to $URL_MAP-blue"
   gsutil -m cp -R $SOURCE_DIR/* gs://$URL_MAP-blue
-  gcloud compute url-maps set-default-service $URL_MAP --default-backend-bucket=$URL_MAP-blue
-  if [[ $? == 0 ]]
+  if [[ $? -ne 0 ]]
   then
-    exit 0
-  else
+    echo "Unable to copy files"
+    exit 1
+  fi
+  gcloud compute url-maps set-default-service $URL_MAP --default-backend-bucket=$URL_MAP-blue
+  if [[ $? -ne 0 ]]
+  then
+    echo "Unable to set bucket"
     exit 1
   fi
 fi
@@ -84,11 +88,15 @@ then
   echo "Green: $DRONE_BUILD_NUMBER" > $SOURCE_DIR/drone_build_version.html
   echo "Setting bucket to $URL_MAP-green"
   gsutil -m cp -R $SOURCE_DIR/* gs://$URL_MAP-green
-  gcloud compute url-maps set-default-service $URL_MAP --default-backend-bucket=$URL_MAP-green
-  if [[ $? == 0 ]]
+  if [[ $? -ne 0 ]]
   then
-    exit 0
-  else
+    echo "Unable to copy files"
+    exit 1
+  fi
+  gcloud compute url-maps set-default-service $URL_MAP --default-backend-bucket=$URL_MAP-green
+  if [[ $? -ne 0 ]]
+  then
+    echo "Unable to set bucket"
     exit 1
   fi
 fi

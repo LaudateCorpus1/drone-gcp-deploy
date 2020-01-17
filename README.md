@@ -43,8 +43,3 @@ steps:
       from_secret: base64_key
     url_map: my-website-name
 ```
-
-## Testing
-
-Modify the included `test.sh` script to test.
-
