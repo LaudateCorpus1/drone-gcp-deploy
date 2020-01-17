@@ -1,0 +1,9 @@
+required_vars:
+  - BASE64_KEY
+  - URL_MAP
+
+optional_vars:
+  - SOURCE_DIR
+
+secret_vars:
+  - BASE64_KEY
